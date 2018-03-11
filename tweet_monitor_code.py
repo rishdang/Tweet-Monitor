@@ -7,7 +7,7 @@ print (" # Loading keys")
 consumer_key = 'INSERT YOUR CONSUMER KEY HERE'
 consumer_secret = 'INSERT YOUR CONSUMER SECRET HERE'
 access_token = 	'INSERT YOUR TOKEN HERE' 
-access_token_secret = 'INSERT YOUR TOEKN SECRET HERE'
+access_token_secret = 'INSERT YOUR TOKEN SECRET HERE'
 twarc_auth = Twarc(consumer_key, consumer_secret, access_token, access_token_secret)
 
 print (" # Reading search terms")
