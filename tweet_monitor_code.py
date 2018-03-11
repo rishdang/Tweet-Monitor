@@ -1,9 +1,16 @@
+"""
+This is a quick and dirty code for monitoring search terms on twitter. No exception handling provided, wrote it as part of tutoring interns at KPMG.
+This can be modified to do a lot more, can be integrated with wordcloud.py for generating wordclouds on the fly.
+Or to perform sentiment analysis using any text parser like aylien. 
+"""
+
 from twarc import Twarc
 import json
 import fileinput
 import sys
 
 print (" # Loading keys")
+
 consumer_key = 'INSERT YOUR CONSUMER KEY HERE'
 consumer_secret = 'INSERT YOUR CONSUMER SECRET HERE'
 access_token = 	'INSERT YOUR TOKEN HERE' 
@@ -11,6 +18,7 @@ access_token_secret = 'INSERT YOUR TOKEN SECRET HERE'
 twarc_auth = Twarc(consumer_key, consumer_secret, access_token, access_token_secret)
 
 print (" # Reading search terms")
+
 with open('tweet_terms.txt','r') as tweet_terms_file_content:
 	my_tweet_terms = [line.strip() for line in tweet_terms_file_content]
 	print (" # Search terms loaded")
@@ -26,6 +34,7 @@ with open('tweet_terms.txt','r') as tweet_terms_file_content:
 		print "No search terms provided, printing generic stream"
 		for tweet in twarc.sample():
 			print(tweet)
+			
 print (" # Authentication successful, dumping results")
 tweet_terms_file_content.close()
 json_output_file.close()
